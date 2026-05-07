@@ -1,2 +1,39 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Используем !important, чтобы перебить встроенный CSS библиотеки */
+/* Оставляем только базовый сброс и цвета */
+.chart-wrapper {
+  width: 90%;
+  display: block; /* или flex, но с четкой шириной */
+}
+
+.react-calendar {
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: inherit;
+}
+
+/* Стили для темной темы (чтобы текст был белым) */
+.dark .react-calendar {
+  color: white !important;
+}
+
+.dark .react-calendar__tile {
+  color: white !important;
+}
+
+.dark .react-calendar__navigation button {
+  color: white !important;
+}
+
+.dark .react-calendar__tile:enabled:hover {
+  background-color: #374151 !important; /* bg-gray-700 */
+  border-radius: 8px;
+}
+
+/* Компактные отступы для ячеек */
+.react-calendar__tile {
+  padding: 10px 6px !important;
+}

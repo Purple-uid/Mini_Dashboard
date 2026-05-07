@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import { useStoreSidebar } from "../../store/storeOne";
+import { useSidebar } from '../../hooks/useStoreSidebar'
 
 import { FaHome } from "react-icons/fa"
 import { HiUsers } from "react-icons/hi2";
@@ -11,17 +11,18 @@ import { IoIosSettings } from "react-icons/io";
 
 
 function Sidebar() {
-  const isOpen = useStoreSidebar( prev => prev.isOpen );
+  const { isOpen } = useSidebar();
 
   const close_open_sidebar = isOpen ? "w-64" : "w-0";
+  const close_open_opacity = isOpen ? 'opacity-100' : 'opacity-0';
 
   return (
     <div className={`
       ${close_open_sidebar}
-      bg-white dark:bg-gray-900 h-screen overflow-hidden transition-all duration-300 ease-in-out
+      bg-white dark:bg-gray-900 h-auto overflow-hidden transition-all duration-300 ease-in-out
       shadow-md border-gray-800 flex-shrink-0
     `}>
-      <div className={`p-6 flex flex-col gap-4 h-full ${isOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>
+      <div className={`p-6 flex flex-col gap-4 h-full ${close_open_opacity} transition-opacity duration-300`}>
         
         <h1 className="text-2xl font-bold mb-6 text-black dark:text-white">Mini Dashboard</h1>
 

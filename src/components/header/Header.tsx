@@ -1,32 +1,16 @@
-import { useStoreSidebar, useStoreTopic } from '../../store/storeOne';
+import { useStoreSidebar } from '../../store/storeOne';
 import { useLocation } from 'react-router-dom';
 import { IoMoon } from "react-icons/io5";
+import { useTopic } from '../../hooks/useStoreTopic'
+import { routeTitles } from '../../lib/routes';
 import SunIcon from '../../assets/icons8-sun-30.png'
 
 function Header() {
-  const { topic, toggleTopic } = useStoreTopic();
+  const { topic, toggleTopic } = useTopic();
   const { isOpen, toggle } = useStoreSidebar();
   const location = useLocation();
+  const title = routeTitles[location.pathname] || "Dashboard";
 
-
-  const getTitle = () => {
-    switch (location.pathname) {
-      case '/':
-        return "Dashboard";
-      case '/users':
-        return "Users";
-      case '/projects':
-        return "Projects";
-      case '/tasks':
-        return "Tasks";
-      case '/reports':
-        return "Reports";
-      case '/settings':
-        return "Settings";
-      default:
-        return "Dashboard";
-    }
-  };
 
   return (
     <div className="flex flex-row gap-5 align-items-center bg-white dark:bg-gray-900 p-4 shadow-md justify-between pr-10">
@@ -48,7 +32,7 @@ function Header() {
             ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
         />
       </div>
-      <h1 className="text-xl font-bold text-black dark:text-white">{getTitle()}</h1>
+      <h1 className="text-xl font-bold text-black dark:text-white">{title}</h1>
       </div>
       <button 
        className='cursor-pointer'

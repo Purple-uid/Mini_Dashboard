@@ -22,7 +22,6 @@ function App() {
         <div className="flex-1 flex flex-col overflow-hidden bg-white dark:bg-gray-900">
           <Header />
           <main className="flex-1 p-6 overflow-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 text-black dark:text-white">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/users" element={<Users />} />
@@ -31,7 +30,6 @@ function App() {
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
-            </div>
           </main>
         </div>
       </div>
