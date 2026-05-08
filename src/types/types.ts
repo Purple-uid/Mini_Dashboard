@@ -18,10 +18,16 @@ interface Address {
 export interface User {
   id: number
   name: string
+  firstName: string
+  lastName: string
+  image: string
   age: number
   username: string
   email: string
   phone: string
+  state: string
+  role: string
+  birthDate: string
   address: Address
 }
 

@@ -20,7 +20,7 @@ function Home() {
   const cartData = carts ? carts.map((c) => c.total) : [];
   const revenueData = carts ? carts.reduce((sum, cart) => sum + (cart.total || 0), 0).toFixed(0) : 0
   const userData = users ? users.map((u) => u.id) : []
-  const todosData = todos ? todos.reduce((sum, tusk) => sum + (tusk.id || 0), 0) : 0
+  const todosData = todos ? todos.length : 0
 
   const chartOptions: ApexOptions = {
     chart: { 
@@ -47,7 +47,7 @@ function Home() {
             </div>
             <div className="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow p-4">
               <p className='text-gray-400 text-sm'>Project</p>
-              <h1 className="text-3xl font-bold mt-1">x</h1>
+              <h1 className="text-3xl font-bold mt-1">42</h1>
             </div>
             <div className="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow p-4">
               <p className='text-gray-400 text-sm'>Tasks</p>
@@ -63,7 +63,7 @@ function Home() {
 
         <div className="w-full flex justify-center px-4">
           <div className="flex flex-row gap-6 items-stretch w-full max-w-7xl"> 
-            <div className="flex-1 bg-white dark:bg-gray-800 rounded-xl shadow p-4">
+            <div className="flex-1 bg-white dark:bg-gray-800 min-h-[350px] rounded-xl shadow p-4">
               <Chart
                 type="bar"
                 height="100%" 

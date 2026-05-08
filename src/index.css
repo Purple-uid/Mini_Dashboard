@@ -36,4 +36,5 @@
 /* Компактные отступы для ячеек */
 .react-calendar__tile {
   padding: 10px 6px !important;
+  justify-content: center;
 }
