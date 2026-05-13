@@ -41,19 +41,29 @@ export interface Carts {
 
 export interface Todos {
   id: number
-  todo: string,
-  completed: boolean,
-  userId: number,
+  todo: string
+  completed: boolean
+  userId: number
   total: number
+}
+
+export interface Project {
+  id: number
+  title: string
+  body: string
+  userId: number
+  reactions: {
+    likes: number
+    dislikes: number
+  } | null
 }
 
 export interface DashboardState {
   users: User[] | null
   carts: Carts[] | null
   todos: Todos[] | null
-  isLoadingTotal: boolean
-  isLoadingUser: boolean
-  isisLoadingTodos: boolean
+  projects: Project[] | null
+  isLoading: boolean
   error: string | null
   fetchAll: () => Promise<void>
 }

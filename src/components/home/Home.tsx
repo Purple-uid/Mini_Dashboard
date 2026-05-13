@@ -11,7 +11,7 @@ import 'react-calendar/dist/Calendar.css';
 function Home() {
   const { carts, todos, users, fetchAll } = useDashboardData()
   const { topic } = useTopic()
-  const [value, setValue] = useState<Value>(new Date());
+  const [ value, setValue ] = useState<Value>(new Date());
 
   useEffect(() => {
     fetchAll();

@@ -13,7 +13,7 @@ function Users() {
   }, [fetchAll]);
 
   const filterUsers = (users || []).filter((user) => {
-    const fullName = `${user.firstName} ${user.lastName}`.toLocaleLowerCase()
+    const fullName = `${user.firstName} ${user.lastName}`.toLowerCase()
     return fullName.includes(search.toLowerCase())
   })
 
@@ -21,15 +21,16 @@ function Users() {
   const lastItem = page * itemsPage;
   const firstItem = lastItem - itemsPage;
   const pageUsers = filterUsers.slice(firstItem, lastItem);
-  const totalPages = Math.ceil((users?.length || 0) / itemsPage)
+  const totalPages = Math.ceil((filterUsers?.length || 0) / itemsPage)
 
   const pageNum = []
   for (let i = 1; i <= totalPages; i++) {
     pageNum.push(i);
   }
+  
 
   return (
-    <div className={`flex flex-col items-center justify-center w-full my-6 ${topic ? "text-white" : "text-black"}`}>
+    <div className={`flex flex-col gap-10 justify-center w-full my-6 ${topic ? "text-white" : "text-black"}`}>
       <div>
         <input
          placeholder='Search user'
@@ -46,14 +47,14 @@ function Users() {
           }`}
           />
       </div>
-      <div className='flex flex-col gap-3 w-full max-w-5xl px-4'>
+      <div className='flex flex-col gap-3 w-full px-4'>
         {pageUsers.map((u) => (
             <div className='grid grid-cols-[50px_2.5fr_3.5fr_1.5fr_1fr] gap-4 items-center border-b border-gray-800 py-3 text-left' key={u.id}>
               <img className='flex justify-start items-center' src={u.image}/>
               <span className='font-medium truncate'>{u.firstName} {u.lastName}</span>
               <span className='text-gray-400 truncate'>{u.email}</span>
               <span className='text-gray-300 capitalize'>{u.role}</span>
-              <span className='text-gray-400'>{u.address?.state}</span>
+              <span className='text-gray-400'>{u.state}</span>
             </div>
         ))}
       </div>
