@@ -6,8 +6,6 @@ import Settings from './components/settings/Settings'
 import Home from './components/home/Home'
 import Users from './components/users/Users'
 import Projects from './components/projects/Projects'
-import Tasks from './components/tasks/Tasks'
-import Reports from './components/reports/Reports'
 
 
 function App() {
@@ -26,8 +24,6 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/projects" element={<Projects />} />
-                <Route path="/tasks" element={<Tasks />} />
-                <Route path="/reports" element={<Reports />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
           </main>

@@ -4,8 +4,6 @@ import { useSidebar } from '../../hooks/useStoreSidebar'
 import { FaHome } from "react-icons/fa"
 import { HiUsers } from "react-icons/hi2";
 import { FaFolderOpen } from "react-icons/fa6";
-import { ImCheckmark } from "react-icons/im";
-import { AiOutlineAreaChart } from "react-icons/ai";
 import { IoIosSettings } from "react-icons/io";
 
 
@@ -36,14 +34,6 @@ function Sidebar() {
 
         <NavLink className="flex items-center gap-3 text-black dark:text-white hover:text-gray-400 dark:hover:text-gray-400 transition-colors" to="/projects">
           <FaFolderOpen /> Projects
-        </NavLink>
-
-        <NavLink className="flex items-center gap-3 text-black dark:text-white hover:text-gray-400 dark:hover:text-gray-400 transition-colors" to="/tasks">
-          <ImCheckmark /> Tasks
-        </NavLink>
-
-        <NavLink className="flex items-center gap-3 text-black dark:text-white hover:text-gray-400 dark:hover:text-gray-400 transition-colors" to="/reports">
-          <AiOutlineAreaChart /> Reports
         </NavLink>
 
         <NavLink className="flex items-center gap-3 text-black dark:text-white hover:text-gray-400 dark:hover:text-gray-400 transition-colors" to="/settings">

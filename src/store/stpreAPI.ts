@@ -10,8 +10,9 @@ export const useDashboardStore = create<DashboardState>((set) => ({
     projects: null,
     isLoading: false,
     error: null,
-    
 
+    
+    
     fetchAll: async () => {
         set({ isLoading: true, error: null })
         try{
