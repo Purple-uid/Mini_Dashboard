@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useTopic } from '../../../hooks/useStoreTopic'
 
 function Profile() {
-  const [ avatar, setAvatar ] = useState(null);
+  const [ avatar, setAvatar ] = useState<File | null>(null);
   const { topic } = useTopic()
 
   return (
@@ -32,7 +32,9 @@ function Profile() {
             <input
                 id="fileInput"
                 type="file"
-                onChange={(e) => setAvatar(e.target.files[0])}
+                onChange={(e) => {
+                    if (e.target.files) setAvatar(e.target.files[0])
+                }}
                 className="hidden"
             />
             {avatar && <img src={URL.createObjectURL(avatar)} alt="Avatar" className="mb-4 w-32 h-32 object-cover rounded-full" />}
