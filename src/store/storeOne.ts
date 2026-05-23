@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from "zustand/middleware";
-import type { OpenSidebar, SwitchingAvatar, SwitchingTopic } from '../types/types'
+import type { OpenSidebar, SwitchingTopic } from '../types/types'
 
 
 export const useStoreSidebar = create<OpenSidebar>(
