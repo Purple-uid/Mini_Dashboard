@@ -8,6 +8,11 @@ export interface SwitchingTopic {
   toggleTopic: () => void
 }
 
+// export interface SwitchingAvatar {
+//   avatar: File | null
+//   toggleAvatar: (avatarFile: File) => void
+// }
+
 interface Address {
   street: string
   suite: string

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from "zustand/middleware";
-import type { OpenSidebar, SwitchingTopic } from '../types/types'
+import type { OpenSidebar, SwitchingAvatar, SwitchingTopic } from '../types/types'
 
 
 export const useStoreSidebar = create<OpenSidebar>(
@@ -21,3 +21,15 @@ export const useStoreTopic = create<SwitchingTopic>()(
     }
   )
 );
+
+// export const useStoreAvatar = create<SwitchingAvatar>()(
+//   persist(
+//     (set) => ({
+//       avatar: null,
+//       toggleAvatar: (avatarFile) => set({ avatar: avatarFile }),
+//     }),
+//     {
+//       name: 'avatar',
+//     }
+//   )
+// );
