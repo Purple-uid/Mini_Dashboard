@@ -8,7 +8,7 @@ import SunIcon from '../../assets/icons8-sun-30.png'
 
 function Header() {
   const { topic, toggleTopic } = useTopic();
-  const { avatar, toggleAvatar } = useAvatar()
+  const { avatar } = useAvatar()
   const { isOpen, toggle } = useStoreSidebar();
   const location = useLocation();
   const title = routeTitles[location.pathname] || "Dashboard";
