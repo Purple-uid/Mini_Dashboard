@@ -8,10 +8,22 @@ export interface SwitchingTopic {
   toggleTopic: () => void
 }
 
-// export interface SwitchingAvatar {
-//   avatar: File | null
-//   toggleAvatar: (avatarFile: File) => void
-// }
+export interface SwitchingAvatar {
+  avatar: string | null
+  toggleAvatar: (avatarFile: File) => void
+}
+
+interface UserData {
+  name: string
+  email: string
+  role: string
+  bio: string
+}
+
+export interface SaveDataUser {
+  user: UserData | null
+  saveData: (userData: UserData) => void;
+}
 
 interface Address {
   street: string

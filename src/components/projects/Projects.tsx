@@ -73,9 +73,9 @@ function Projects() {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex -space-x-2">
-                  <img src={users?.find((u) => u.id == 1)?.image} alt="user" className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white" />
-                  <img src={users?.find((u) => u.id == 2)?.image} alt="user" className="w-8 h-8 rounded-full bg-pink-500 border-2 border-white" />
-                  <img src={users?.find((u) => u.id == 3)?.image} alt="user" className="w-8 h-8 rounded-full bg-green-500 border-2 border-white" />
+                  <img src={users?.find((u) => u.id === 1)?.image} alt="user" className="w-8 h-8 rounded-full bg-blue-500 border-2 border-white" />
+                  <img src={users?.find((u) => u.id === 2)?.image} alt="user" className="w-8 h-8 rounded-full bg-pink-500 border-2 border-white" />
+                  <img src={users?.find((u) => u.id === 3)?.image} alt="user" className="w-8 h-8 rounded-full bg-green-500 border-2 border-white" />
                 </div>
 
                 <span

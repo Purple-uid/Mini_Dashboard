@@ -37,7 +37,7 @@ function Header() {
       <button 
        className='cursor-pointer'
        onClick={() => toggleTopic()}>
-        {topic ? <img className='w-5 h-5'  src={SunIcon}></img> : <IoMoon className='w-5 h-5' />}
+        {topic ? <img className='w-5 h-5'  src={SunIcon} /> : <IoMoon className='w-5 h-5' />}
       </button>
     </div>
   )

@@ -1,4 +1,4 @@
-import { useDashboardStore } from '../store/stpreAPI';
+import { useDashboardStore } from '../store/storeAPI';
 
 export function useDashboardData() {
     const carts = useDashboardStore(prev => prev.carts)
