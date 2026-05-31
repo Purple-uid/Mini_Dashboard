@@ -1,4 +1,5 @@
 import { useStoreSidebar } from '../../store/storeOne';
+import { useAvatar } from '../../hooks/useStoreSettings'
 import { useLocation } from 'react-router-dom';
 import { IoMoon } from "react-icons/io5";
 import { useTopic } from '../../hooks/useStoreTopic'
@@ -7,6 +8,7 @@ import SunIcon from '../../assets/icons8-sun-30.png'
 
 function Header() {
   const { topic, toggleTopic } = useTopic();
+  const { avatar, toggleAvatar } = useAvatar()
   const { isOpen, toggle } = useStoreSidebar();
   const location = useLocation();
   const title = routeTitles[location.pathname] || "Dashboard";
@@ -34,11 +36,14 @@ function Header() {
       </div>
       <h1 className="text-xl font-bold text-black dark:text-white">{title}</h1>
       </div>
-      <button 
-       className='cursor-pointer'
-       onClick={() => toggleTopic()}>
-        {topic ? <img className='w-5 h-5'  src={SunIcon} /> : <IoMoon className='w-5 h-5' />}
-      </button>
+      <div className="flex flex-row gap-[15px] align-items-center">
+        <button 
+          className='cursor-pointer'
+          onClick={() => toggleTopic()}>
+          {topic ? <img className='w-5 h-5'  src={SunIcon} /> : <IoMoon className='w-5 h-5' />}
+        </button>
+        {avatar && <img src={avatar} alt="Avatar" className='w-8 h-8 rounded-full' />}
+      </div>
     </div>
   )
 }
